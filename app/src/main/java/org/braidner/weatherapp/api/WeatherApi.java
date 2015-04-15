@@ -12,5 +12,8 @@ import retrofit.http.Query;
 public interface WeatherApi {
 
     @GET("/forecast")
-    public void getWeather(@Query("q") String query, @Query("lang") String lang, Callback<WeatherResponse> callback);
+    public void getForecastWeather(@Query("q") String query, @Query("lang") String lang, Callback<WeatherResponse> callback);
+
+    @GET("/forecast/daily")
+    public void getForecastDailyWeather(@Query("q") String query, @Query("lang") String lang, @Query("cnt") Integer countDays, @Query("units") String units, Callback<WeatherResponse> callback);
 }

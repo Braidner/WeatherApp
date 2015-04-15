@@ -12,6 +12,9 @@ public class Weather {
     @SerializedName("main")
     private WeatherInfo weatherInfo;
 
+    @SerializedName("temp")
+    private Temperature temperature;
+
     @SerializedName("weather")
     private List<Status> statusesList;
 
@@ -40,5 +43,13 @@ public class Weather {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Temperature getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Temperature temperature) {
+        this.temperature = temperature;
     }
 }

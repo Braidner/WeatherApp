@@ -67,7 +67,7 @@ public class WeatherAdapter extends ArrayAdapter<Weather> {
         @SuppressLint("SimpleDateFormat")
         void populateItem(Weather weather) {
             weatherInfo.setText(weather.getStatusesList().get(0).getDescription());
-            temperature.setText(decimalFormat.format(weather.getWeatherInfo().getTemperature()));
+            temperature.setText(decimalFormat.format(weather.getTemperature().getMax()));
             date.setText(new SimpleDateFormat("dd.MM.yyy HH:mm").format(weather.getDate()));
             ImageLoader.getInstance().displayImage(weather.getStatusesList().get(0).getIcon(), icon, displayImageOptions);
         }

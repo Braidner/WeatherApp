@@ -3,12 +3,8 @@ package org.braidner.weatherapp.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -18,13 +14,11 @@ import com.google.gson.JsonParseException;
 import org.braidner.weatherapp.R;
 import org.braidner.weatherapp.adapter.WeatherAdapter;
 import org.braidner.weatherapp.api.WeatherApi;
-import org.braidner.weatherapp.model.Weather;
 import org.braidner.weatherapp.response.WeatherResponse;
 import org.braidner.weatherapp.util.Constants;
 
 import java.lang.reflect.Type;
 import java.util.Date;
-import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -59,7 +53,8 @@ public class WeatherActivity extends ActionBarActivity {
         listView = (ListView) findViewById(R.id.weather_list);
         weatherAdapter = new WeatherAdapter(this);
         listView.setAdapter(weatherAdapter);
-        weatherApi.getWeather("Moscow,ru", "ru", weatherCallback);
+//        weatherApi.getForecastWeather("Moscow,ru", "ru", weatherCallback);
+        weatherApi.getForecastDailyWeather("Moscow,ru", "ru", 5, "metric", weatherCallback);
     }
 
     public WeatherApi getWeatherApi() {
