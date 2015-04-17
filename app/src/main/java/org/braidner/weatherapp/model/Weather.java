@@ -1,14 +1,17 @@
 package org.braidner.weatherapp.model;
 
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by smith / 10.04.2015.
  */
-public class Weather {
+public class Weather implements Serializable {
     @SerializedName("main")
     private WeatherInfo weatherInfo;
 

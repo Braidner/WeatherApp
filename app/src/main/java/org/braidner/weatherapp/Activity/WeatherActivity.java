@@ -1,8 +1,11 @@
 package org.braidner.weatherapp.Activity;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import com.google.gson.GsonBuilder;
@@ -19,6 +22,7 @@ import org.braidner.weatherapp.util.Constants;
 
 import java.lang.reflect.Type;
 import java.util.Date;
+import java.util.concurrent.CompletionService;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -27,7 +31,7 @@ import retrofit.client.Response;
 import retrofit.converter.GsonConverter;
 
 
-public class WeatherActivity extends ActionBarActivity {
+public class WeatherActivity extends ListActivity {
 
     private WeatherApi weatherApi;
     private ListView listView;
@@ -57,10 +61,17 @@ public class WeatherActivity extends ActionBarActivity {
         weatherApi.getForecastDailyWeather("Moscow,ru", "ru", 5, "metric", weatherCallback);
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Intent intent = new Intent(this, WeatherInfoActivity.class);
+        intent.putExtra(Constants.WEATHER, weatherAdapter.getItem(position));
+        startActivity(intent);
+    }
+
     public WeatherApi getWeatherApi() {
         GsonBuilder builder = new GsonBuilder();
 
-        //test
         builder.registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
             public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
                 return new Date(json.getAsJsonPrimitive().getAsLong() * 1000);

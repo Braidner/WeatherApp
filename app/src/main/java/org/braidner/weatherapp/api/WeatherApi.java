@@ -9,6 +9,7 @@ import retrofit.http.Query;
 /**
  * Created by smith / 10.04.2015.
  */
+
 public interface WeatherApi {
 
     @GET("/forecast")
