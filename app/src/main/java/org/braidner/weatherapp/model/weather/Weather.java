@@ -1,6 +1,4 @@
-package org.braidner.weatherapp.model;
-
-import android.os.Parcelable;
+package org.braidner.weatherapp.model.weather;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -13,12 +13,10 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.braidner.weatherapp.R;
-import org.braidner.weatherapp.model.Weather;
-import org.braidner.weatherapp.util.Constants;
+import org.braidner.weatherapp.model.weather.Weather;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by smith / 10.04.2015.

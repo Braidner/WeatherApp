@@ -1,4 +1,4 @@
-package org.braidner.weatherapp.model;
+package org.braidner.weatherapp.model.weather;
 
 import com.google.gson.annotations.SerializedName;
 

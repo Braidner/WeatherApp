@@ -2,8 +2,8 @@ package org.braidner.weatherapp.response;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.braidner.weatherapp.model.City;
-import org.braidner.weatherapp.model.Weather;
+import org.braidner.weatherapp.model.weather.City;
+import org.braidner.weatherapp.model.weather.Weather;
 
 import java.util.List;
 

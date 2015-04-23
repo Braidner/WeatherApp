@@ -1,4 +1,4 @@
-package org.braidner.weatherapp.model;
+package org.braidner.weatherapp.model.weather;
 
 import android.content.Intent;
 
